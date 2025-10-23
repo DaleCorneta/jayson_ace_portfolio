@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+.blob {
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  margin: 20px;
+  animation: animate 30s ease-in-out infinite,
+    wobbler 15s 0s linear infinite alternate;
+}
+
+.grid-wrapper {
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #f8fafc;
+}
+
+.grid-background {
+  /* background-color: #f8fafc; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background-image: linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+    linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+  background-size: 35px 35px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -250% 0;
+  }
+  100% {
+    background-position: 250% 0;
+  }
+}
+
+@keyframes rainbowMove {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover and group-hover helpers for the animation class name produced in JSX:
+   - .hover\:animate-rainbowMove:hover -> supports `hover:animate-rainbowMove`
+   - .group:hover .group-hover\:animate-rainbowMove -> supports `group-hover:animate-rainbowMove`
+*/
+.hover\:animate-rainbowMove:hover,
+.group:hover .group-hover\:animate-rainbowMove {
+  animation: rainbowMove 3s linear infinite;
+}
+
+/* Ensure background-clip text works across browsers and text shows the gradient */
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* required in WebKit to reveal background-clip */
+}
+
+/* Optional: give the animated gradient an initial position so movement is visible */
+.bg-pos-0 {
+  background-position: 0% 50%;
+}
+
+@theme {
+  --container-padding: 15px;
+
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 960px;
+  --breakpoint-xl: 1310px;
+
+  --color-primary: #013566;
+  --color-secondary: #151538;
+  --color-tertiary: #242445;
+  --color-accent: #ffbf00;
+  --color-accent-hover: #6519c6;
+
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Montserrat", sans-serif;
+
+  --background-hero-overlay: url("./assets/hero/hero-overlay.png");
+  --background-site: url("./assets/background.jpg");
+  --background-about: url("./assets/about.png");
+  --background-avatar: url("../public/images/banner.png");
+  --background-moon: url("./assets/hero/moon.png");
+}
+
+@keyframes border-spin {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes tilt {
+  0%,
+  50%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(1.5deg);
+  }
+  75% {
+    transform: rotate(-1.5deg);
+  }
+}
+
+@utility border-spin {
+  animation: border-spin 7s linear infinite;
+}
+
+@utility tilt {
+  animation: tilt 10s infinite linear;
+}
