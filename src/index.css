@@ -40,6 +40,8 @@
   );
 }
 
+@custom-variant hover (&:hover);
+
 @keyframes shimmer {
   0% {
     background-position: -250% 0;
