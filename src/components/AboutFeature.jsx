@@ -71,7 +71,7 @@ const AboutFeature = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-accent p-4 w-18 h-18 rounded-full flex items-center justify-center hover:scale-125 transition-transform">
@@ -99,7 +99,7 @@ const AboutFeature = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-accent p-4 w-18 h-18 rounded-full flex items-center justify-center hover:scale-125 transition-transform">
@@ -127,7 +127,7 @@ const AboutFeature = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-primary h-[340px] rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-accent p-4 w-18 h-18 rounded-full flex items-center justify-center hover:scale-125 transition-transform">

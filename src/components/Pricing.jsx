@@ -56,7 +56,7 @@ const Pricing = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166 rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166 rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-primary p-4 w-10 h-10 lg:w-12 lg:h-12 xl:w-16 xl:h-16 rounded-full flex items-center justify-center hover:scale-125 transition-transform">
@@ -134,7 +134,7 @@ const Pricing = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166  rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166  rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-primary p-4 w-10 h-10 lg:w-12 lg:h-12 xl:w-16 xl:h-16 rounded-full flex items-center justify-center hover:scale-125 transition-transform">
@@ -197,7 +197,7 @@ const Pricing = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166  rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/3 bg-white h-136 lg:h-152 xl:h-166  rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent transition-all duration-500"
           >
             <div className="flex items-center justify-center w-full">
               <div className="bg-primary p-4 w-10 h-10 lg:w-12 lg:h-12 xl:w-16 xl:h-16 rounded-full flex items-center justify-center hover:scale-125 transition-transform">

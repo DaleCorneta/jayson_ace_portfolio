@@ -56,7 +56,7 @@ const Contact = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center">
               <h4 className="font-semibold font-primary xl:text-3xl bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-pink-500 bg-[length:200%_100%] bg-clip-text text-transparent transition-all duration-500 group-hover:animate-rainbowMove">
@@ -77,7 +77,7 @@ const Contact = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center">
               <h4 className="font-semibold font-primary xl:text-3xl bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-pink-500 bg-[length:200%_100%] bg-clip-text text-transparent transition-all duration-500 group-hover:animate-rainbowMove">
@@ -98,7 +98,7 @@ const Contact = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center">
               <h4 className="font-semibold font-primary xl:text-3xl bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-pink-500 bg-[length:200%_100%] bg-clip-text text-transparent transition-all duration-500 group-hover:animate-rainbowMove">
@@ -123,7 +123,7 @@ const Contact = () => {
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:scale-105 transition-all duration-500"
+            className="group w-full lg:w-1/4 bg-primary h-32 rounded-3xl shadow-md border border-primary/10 p-6 hover:border-accent hover:shadow-2xl transition-all duration-500"
           >
             <div className="flex items-center justify-center">
               <h4 className="font-semibold font-primary xl:text-3xl bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-pink-500 bg-[length:200%_100%] bg-clip-text text-transparent transition-all duration-500 group-hover:animate-rainbowMove">
