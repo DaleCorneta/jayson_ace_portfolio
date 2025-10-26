@@ -36,7 +36,7 @@ const About = () => {
               <h2 className="text-primary font-primary text-[48px] mb-6 font-bold leading-[0.8]">
                 About me<span className="text-accent">.</span>
               </h2>
-              <p className="text-secondary font-secondary mb-6 font-medium text-justify text-xl">
+              <p className="text-primary font-secondary mb-6 font-medium text-justify text-xl">
                 {" "}
                 Hi, I’m Mark Jayson Reginales, but you can call me Ace. I’m a
                 passionate visual creator who loves to turn ideas into

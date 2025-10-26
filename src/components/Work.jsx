@@ -68,7 +68,7 @@ const Work = () => {
         </motion.div>
 
         {/* Intro Section */}
-        <div className="flex flex-col lg:flex-row items-start lg:justify-between justify-center my-12 gap-y-6">
+        <div className="flex flex-col lg:flex-row items-start lg:justify-between justify-end my-12 gap-y-6">
           <motion.div
             variants={fadeIn("right", 0.3)}
             initial="hidden"
@@ -88,6 +88,7 @@ const Work = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
+            className="w-full flex items-center justify-end"
           >
             <Link to="contact" smooth={true} spy={true}>
               <motion.button
@@ -112,7 +113,7 @@ const Work = () => {
               whileInView="show"
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="relative group h-64 md:h-76 lg:h-76 xl:h-118 rounded-3xl overflow-hidden cursor-pointer"
+              className="relative group h-100 md:h-76 lg:h-76 xl:h-118 rounded-3xl overflow-hidden cursor-pointer"
             >
               {/* Background Image */}
               <div

@@ -27,10 +27,12 @@ const BeyondWork = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="w-full lg:w-1/2"
           >
-            <h2 className="text-primary font-primary text-[48px] mb-6 font-bold leading-[0.9]">
-              Beyond the Work<span className="text-accent">.</span>
-            </h2>
-            <p className="text-secondary font-secondary font-medium text-justify text-lg leading-relaxed">
+            <div className="flex flex-row items-center justify-center lg:justify-start w-full">
+              <h2 className="text-primary font-primary text-center text-[48px] mb-6 font-bold leading-[1.1]">
+                Beyond the Work<span className="text-accent">.</span>
+              </h2>
+            </div>
+            <p className="text-primary font-secondary font-medium text-justify text-lg leading-relaxed">
               As a Baguio-based content creator and visual artist, I’m currently
               building a series that documents my creative journey{" "}
               <span className="text-accent">—</span> including the process of

@@ -5,7 +5,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-white px-2 py-12 flex w-full items-center justify-center pt-[100px] relative"
+      className="min-h-screen bg-white px-2 py-12 flex w-full items-center justify-center pt-[100px] relative pb-[150px] xl:pb-[50px]"
     >
       <motion.div
         variants={fadeIn("up", 0.3)}
@@ -26,7 +26,7 @@ const Contact = () => {
             <h4
               className="font-semibold font-primary text-5xl xl:text-8xl
               bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-pink-500
-              bg-[length:200%_100%] bg-pos-0 bg-clip-text text-transparent transition-all duration-500
+              bg-[length:200%_100%] bg-pos-0 bg-clip-text text-transparent transition-all duration-500 text-center
               group-hover:animate-rainbowMove leading-[1.1] pb-2"
             >
               Let's Work Together
