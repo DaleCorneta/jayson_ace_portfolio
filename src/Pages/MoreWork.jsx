@@ -4,7 +4,12 @@ import { FiArrowRight } from "react-icons/fi";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import WorkModal from "../components/WorkModal";
-import VideoModal from "../components/VideoModal"; // ✅ Add your VideoModal import
+import VideoModal from "../components/VideoModal";
+import { works } from "../worksData";
+import FallbackVideoThumbnail from "../components/FallbackVideoThumbnail";
+import LazyImage from "../components/LazyImage";
+
+const ITEMS_PER_PAGE = 20;
 
 const MoreWork = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -13,64 +18,21 @@ const MoreWork = () => {
   );
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedWork, setSelectedWork] = useState(null);
-
-  const works = [
-    {
-      id: 1,
-      title: "Hungry Bob Korean Fusion",
-      tag: "hungry_bob",
-      desc: "Logo • social media content • printable and display menus • promotional video • Grab & Foodpanda designs • food photography",
-      img: "https://drive.google.com/thumbnail?id=11KlL7MA63VUUZ1UE62IyEcpjl4vhlU9-&sz=w2000",
-    },
-    {
-      id: 2,
-      title: "Dabang Coffee",
-      tag: "dabang",
-      desc: "Graphic design • logo • social media posts • printable and display menus • video reels • promotional video • Grab & Foodpanda materials • menu photography",
-      img: "https://drive.google.com/thumbnail?id=1Fz3WRHRAnEASv8o9weSl9zkaABeHPOcl&sz=w2000",
-    },
-    {
-      id: 3,
-      title: "OnePiece Resto Café",
-      tag: "one_piece",
-      desc: "Custom One Piece murals • printable menus • logo design • branding materials",
-      img: "https://drive.google.com/thumbnail?id=1Ls03GqEQlzR79_x2uMCNpufpR49jWidy&sz=w2000",
-    },
-    {
-      id: 4,
-      title: "Pugad ni Art Studio",
-      tag: "pugad",
-      desc: "Wall design • creative mural paintings",
-      img: "https://drive.google.com/thumbnail?id=1P0jAIG7HfAgbg2fF_ud4cfd7PX5MUjYq&sz=w2000",
-    },
-    {
-      id: 5,
-      title: "Oswald (Music Artist)",
-      tag: "oswald",
-      desc: "Music video editing • thumbnail • Spotify artwork • teaser reels",
-      img: "https://drive.google.com/thumbnail?id=1K40wkYyfykHTEcaFj9HiuWW1CBDOeaJc&sz=w2000",
-      type: "video", // ✅ this one will open the video modal
-      video: "https://drive.google.com/file/d/1aoO6sOTXgEl0rnIXV8R2zzEmitSlK_bY/view?usp=drive_link", // ✅ direct video link
-    },
-    {
-      id: 6,
-      title: "Café Will Restaurant",
-      tag: "cafe_will",
-      desc: "Logo enhancement • printable menus • menu photography",
-      img: "https://drive.google.com/thumbnail?id=1tztO7K6G5MXM1AXi9SUlrVLdQbf27m0T&sz=w2000",
-    },
-  ];
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
 
   const tags = ["all", ...new Set(works.map((work) => work.tag))];
 
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
     if (selectedTag === "all") {
-      searchParams.delete("tag");
-      setSearchParams(searchParams);
+      params.delete("tag");
+      setSearchParams(params);
     } else {
-      setSearchParams({ tag: selectedTag });
+      params.set("tag", selectedTag);
+      setSearchParams(params);
     }
-  }, [selectedTag]);
+    setVisibleCount(ITEMS_PER_PAGE); // reset visible count when tag changes
+  }, [selectedTag, setSearchParams]);
 
   const filteredWorks = works.filter((work) => {
     const matchesTag = selectedTag === "all" || work.tag === selectedTag;
@@ -79,6 +41,12 @@ const MoreWork = () => {
       work.desc.toLowerCase().includes(searchTerm.toLowerCase());
     return matchesTag && matchesSearch;
   });
+
+  const visibleWorks = filteredWorks.slice(0, visibleCount);
+
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
+  };
 
   return (
     <section
@@ -132,21 +100,21 @@ const MoreWork = () => {
 
         {/* Work Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 w-full mt-16">
-          {filteredWorks.length > 0 ? (
-            filteredWorks.map((work) => (
-              <motion.div
+          {visibleWorks.length > 0 ? (
+            visibleWorks.map((work) => (
+              <div
                 key={work.id}
-                variants={fadeIn("up", work.id * 0.2)}
-                initial="hidden"
-                whileInView="show"
                 className="relative group h-100 md:h-76 lg:h-76 xl:h-86 rounded-3xl overflow-hidden cursor-pointer"
               >
-                <img
-                  src={work.img}
-                  alt={work.title}
-                  referrerPolicy="no-referrer"
-                  className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[3px]"
-                />
+                {work.img ? (
+                  <LazyImage
+                    src={work.img}
+                    alt={work.title}
+                    className="group-hover:scale-110 group-hover:blur-[3px]"
+                  />
+                ) : work.type === "video" ? (
+                  <FallbackVideoThumbnail />
+                ) : null}
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end text-center text-white p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-10">
                   <h3 className="text-xl font-semibold mb-2">{work.title}</h3>
@@ -158,7 +126,7 @@ const MoreWork = () => {
                     View <FiArrowRight />
                   </button>
                 </div>
-              </motion.div>
+              </div>
             ))
           ) : (
             <p className="text-center text-gray-400 col-span-full">
@@ -166,9 +134,21 @@ const MoreWork = () => {
             </p>
           )}
         </div>
+
+        {/* Load More Button */}
+        {visibleCount < filteredWorks.length && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={handleLoadMore}
+              className="px-6 py-3 rounded-xl bg-accent text-white font-semibold hover:bg-accent/80 transition-all"
+            >
+              Load More
+            </button>
+          </div>
+        )}
       </div>
 
-      {/* ✅ Conditional Modal for Image or Video */}
+      {/* Conditional Modal */}
       {selectedWork &&
         (selectedWork.type === "video" ? (
           <VideoModal
