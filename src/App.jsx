@@ -4,10 +4,12 @@ import MainLayout from "./Layout/MainLayout.jsx";
 import PageLayout from "./Layout/PageLayout.jsx";
 import MoreWork from "./Pages/MoreWork.jsx";
 import SingleWork from "./Pages/SingleWork.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />

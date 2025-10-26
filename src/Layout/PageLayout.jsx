@@ -1,11 +1,11 @@
-import Header from "../components/Header";
 import { Outlet } from "react-router-dom";
+import PageHeader from "../components/PageHeader";
 
 const PageLayout = () => {
   return (
     <>
       <div className="overflow-hidden bg-white">
-        <Header />
+        <PageHeader/>
         <Outlet />
       </div>
     </>

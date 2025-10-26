@@ -72,7 +72,7 @@ const MoreWork = () => {
         </motion.div>
 
         {/* Filter and Search */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 mt-10">
+        <div className="flex flex-col lg:flex-row items-start justify-between gap-4 mt-10">
           <div className="flex flex-wrap gap-3 justify-center">
             {tags.map((tag) => (
               <button
