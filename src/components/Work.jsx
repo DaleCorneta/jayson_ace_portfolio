@@ -1,40 +1,52 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import { FiArrowRight } from "react-icons/fi";
-import { Link } from "react-scroll";
-
-import HungryBob from "../assets/hungry_bob.png";
-import Dabang from "../assets/dabang.png";
-import OnePiece from "../assets/one_piece.png";
-import Pugad from "../assets/pugad.png";
-import Basbas from "../assets/basbas.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Work = () => {
+  const navigate = useNavigate();
   const works = [
     {
+      id: 1,
       title: "Hungry Bob Korean Fusion",
+      tag: "hungry_bob",
       desc: "Logo • social media content • printable and display menus • promotional video • Grab & Foodpanda designs • food photography",
-      img: HungryBob,
+      img: "https://drive.google.com/thumbnail?id=11KlL7MA63VUUZ1UE62IyEcpjl4vhlU9-&sz=w2000",
     },
     {
+      id: 2,
       title: "Dabang Coffee",
+      tag: "dabang",
       desc: "Graphic design • logo • social media posts • printable and display menus • video reels • promotional video • Grab & Foodpanda materials • menu photography",
-      img: Dabang,
+      img: "https://drive.google.com/thumbnail?id=1Fz3WRHRAnEASv8o9weSl9zkaABeHPOcl&sz=w2000",
     },
     {
+      id: 3,
       title: "OnePiece Resto Café",
+      tag: "ome_piece",
       desc: "Custom One Piece murals • printable menus • logo design • branding materials",
-      img: OnePiece,
+      img: "https://drive.google.com/thumbnail?id=1Ls03GqEQlzR79_x2uMCNpufpR49jWidy&sz=w2000",
     },
     {
+      id: 4,
       title: "Pugad ni Art Studio",
+      tag: "pugad",
       desc: "Wall design • creative mural paintings",
-      img: Pugad,
+      img: "https://drive.google.com/thumbnail?id=1P0jAIG7HfAgbg2fF_ud4cfd7PX5MUjYq&sz=w2000",
     },
     {
+      id: 5,
       title: "Oswald (Music Artist)",
+      tag: "oswald",
       desc: "Music video editing • thumbnail • Spotify artwork • teaser reels",
-      img: Basbas,
+      img: "https://drive.google.com/thumbnail?id=1K40wkYyfykHTEcaFj9HiuWW1CBDOeaJc&sz=w2000",
+    },
+    {
+      id: 6,
+      title: "Café Will Restaurant",
+      tag: "cafe_will",
+      desc: "Logo enhancement • printable menus • menu photography",
+      img: "https://drive.google.com/thumbnail?id=1tztO7K6G5MXM1AXi9SUlrVLdQbf27m0T&sz=w2000",
     },
   ];
 
@@ -90,44 +102,40 @@ const Work = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="w-full flex items-center justify-end"
           >
-            <Link to="contact" smooth={true} spy={true}>
-              <motion.button
-                whileHover={{ scale: 1.015 }}
-                whileTap={{ scale: 0.985 }}
-                className="group relative flex w-fit items-center gap-1.5 rounded-xl bg-accent px-4 py-2 text-gray-50 transition-colors hover:text-primary font-secondary"
-              >
-                See More
-                <FiArrowRight className="transition-transform group-hover:rotate-45 group-active:-rotate-12" />
-              </motion.button>
-            </Link>
+            <motion.button
+              onClick={() => navigate(`/works`)}
+              whileHover={{ scale: 1.015 }}
+              whileTap={{ scale: 0.985 }}
+              className="group relative flex w-fit items-center gap-1.5 rounded-xl bg-accent px-4 py-2 text-gray-50 transition-colors hover:text-primary font-secondary"
+            >
+              See More
+              <FiArrowRight className="transition-transform group-hover:rotate-45 group-active:-rotate-12" />
+            </motion.button>
           </motion.div>
         </div>
 
         {/* Work Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-12 w-full">
-          {works.map((work, index) => (
+          {works.map((work) => (
             <motion.div
-              key={index}
-              variants={fadeIn("up", index * 0.2)}
+              key={work.id}
+              variants={fadeIn("up", work.id * 0.2)}
               initial="hidden"
               whileInView="show"
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               className="relative group h-100 md:h-76 lg:h-76 xl:h-118 rounded-3xl overflow-hidden cursor-pointer"
             >
-              {/* Background Image */}
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-all duration-700 group-hover:scale-110 group-hover:blur-[3px]"
-                style={{ backgroundImage: `url(${work.img})` }}
-              ></div>
+              {/* Background Image (FIXED for Google Drive) */}
+              <img
+                src={work.img}
+                alt={work.title}
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[3px]"
+              />
 
               {/* Hover Overlay */}
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent 
-        flex flex-col justify-end text-center text-white p-6 
-        opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out
-        z-10"
-              >
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end text-center text-white p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out z-10">
                 {/* Content Wrapper (fix hover trigger area) */}
                 <div className="absolute inset-0 -z-10"></div>
 
@@ -143,7 +151,7 @@ const Work = () => {
                         staggerChildren: 0.15,
                       },
                     },
-                  }} 
+                  }}
                   className="relative z-20"
                 >
                   <motion.h3
@@ -175,7 +183,7 @@ const Work = () => {
                     {work.desc}
                   </motion.p>
 
-                  <motion.a
+                  <motion.button
                     variants={{
                       hidden: { opacity: 0, y: 30 },
                       show: {
@@ -184,11 +192,11 @@ const Work = () => {
                         transition: { duration: 0.5, ease: "easeOut" },
                       },
                     }}
-                    href="#"
+                    onClick={() => navigate(`/works?tag=${work.tag}`)}
                     className="inline-block font-secondary px-4 py-2 rounded-xl bg-accent hover:bg-accent/80 text-white text-sm font-semibold transition-all"
                   >
                     View More →
-                  </motion.a>
+                  </motion.button>
                 </motion.div>
               </div>
             </motion.div>

@@ -51,7 +51,7 @@ const Pricing = () => {
         <div className="flex flex-col lg:flex-row w-full items-center justify-around mt-12 gap-x-8 gap-y-6">
           {/* CARD 1 */}
           <motion.div
-            variants={fadeIn("up", 0.2)}
+            variants={fadeIn("up", 1 * 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
@@ -71,7 +71,9 @@ const Pricing = () => {
             <div className="mt-8 flex items-center justify-center">
               <div className="flex flex-row items-center justify-start xl:justify-center gap-x-2 w-full px-4 xl:px-8">
                 <p className="text-xs font-primary text-primary text-center">
-                  <i>Starts  <br /> at</i>
+                  <i>
+                    Starts <br /> at
+                  </i>
                 </p>
                 <h3 className="text-primary font-bold font-primary text-5xl lg:text-3xl xl:text-5xl my-2">
                   ₱1,500
@@ -83,12 +85,16 @@ const Pricing = () => {
                 {/* Item 1 */}
                 <div className="font-semibold flex items-start gap-x-3">
                   <BsCheck2Circle className="w-6 h-6 flex-shrink-0 mt-1 text-accent" />
-                  <p className="text-xs lg:text-md xl">Up to 3 design layouts</p>
+                  <p className="text-xs lg:text-md xl">
+                    Up to 3 design layouts
+                  </p>
                 </div>
 
                 {/* Sub-points */}
                 <div className="flex flex-col pl-9 gap-y-1">
-                  <p className="text-xs lg:text-md xl">→ 1 for promotional/ads,</p>
+                  <p className="text-xs lg:text-md xl">
+                    → 1 for promotional/ads,
+                  </p>
                   <p className="text-xs lg:text-md xl">
                     → 1 editable version for future updates,
                   </p>
@@ -129,7 +135,7 @@ const Pricing = () => {
 
           {/* CARD 2 */}
           <motion.div
-            variants={fadeIn("up", 0.3)}
+            variants={fadeIn("up", 2 * 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
@@ -149,7 +155,9 @@ const Pricing = () => {
             <div className="mt-8 flex items-center justify-center">
               <div className="flex flex-row items-center justify-start xl:justify-center gap-x-2 w-full px-4 xl:px-8">
                 <p className="text-xs font-primary text-primary text-center">
-                  <i>Starts  <br /> at</i>
+                  <i>
+                    Starts <br /> at
+                  </i>
                 </p>
                 <h3 className="text-primary font-bold font-primary text-5xl lg:text-3xl xl:text-5xl my-2">
                   ₱3,000
@@ -192,7 +200,7 @@ const Pricing = () => {
 
           {/* CARD 3 */}
           <motion.div
-            variants={fadeIn("up", 0.4)}
+            variants={fadeIn("up", 3 * 0.2)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: false, amount: 0.3 }}
@@ -212,7 +220,9 @@ const Pricing = () => {
             <div className="mt-8 flex items-center justify-center">
               <div className="flex flex-row items-center justify-start xl:justify-center gap-x-2 w-full px-4 xl:px-8">
                 <p className="text-xs font-primary text-primary text-center">
-                  <i>Starts  <br /> at</i>
+                  <i>
+                    Starts <br /> at
+                  </i>
                 </p>
                 <h3 className="text-primary font-bold font-primary text-5xl lg:text-3xl xl:text-5xl my-2">
                   ₱5,000
